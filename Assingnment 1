@@ -1,0 +1,11 @@
+Linux command to get duplicate word count in a file. Write the output to new file.
+
+
+
+sort test.txt | uniq -d -c > abc.txt
+sort command is used to sort a file
+uniq command will filters out the repeated lines of a file
+-d prints only repeated lines
+-c will counts the line
+">" will gives direction to a new file
+
