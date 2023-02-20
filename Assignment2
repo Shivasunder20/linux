@@ -1,0 +1,13 @@
+Linux command to 
+	1	Swap the column (3<=> 2) of a file
+	2	After swapping if it has duplicated rows, then remove it
+	3	Place the counts of line before and after conversion in the footer of output file
+	4	Save it in a new file Demo2.txt
+The output file should contain (let assume the column swapped)
+Demo2.txt
+----------------------------
+1        2          3
+xxxx  97497   delivery
+
+
+awk '{t=$2;$2=$3;$3=t; print}{!arr[$0]++} END{for (i in arr){count++;print i} print " Total no of lines before:", NR,"\n","Total no of lines After:",count;}' demo.txt >> demo1.txt
